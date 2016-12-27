@@ -19,5 +19,10 @@ namespace ModelEntity.DAO
         {
             db = new DBContextCMS();
         }
+        //Dùng LINQ to Entity
+        public List<Module> ListAll()
+        {
+            return db.Modules.ToList();
+        }
     }
 }
