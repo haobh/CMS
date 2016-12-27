@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "TreeView";
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+}
+
+@model List<ModelEntity.EF.Menu>
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav">
+            @*//Kiem tra nhung truong co ParentID=null(ParentID la ID Cha cua chinh no)
+                //x=>x.ParentID==null Kiem tra chi hien thi nhung truong co ParenID ==Null thi moi hien thi ra menu chinh,
+                //Nhung truong co ParentID=ID cua ban ghi hien tai tren cung 1 bang thi no la con cua ID do(Dang lam tren cung 1 bang, Neu lam 2 bang thi su dung View)
+                //var parentClass = child.Count() > 0 ? "class=dropdown - toggle data-toggle=dropdown" : ""; //So menu con xuong, class="dropdown-toggle" data-toggle="dropdown" Khi Click vao thi no hien thi menu con o phia duoi*@
+            @foreach (var item in Model.Where(x => x.ParentMenuID == null))
+            {
+                var child = Model.Where(x => x.ParentMenuID == item.ID);
+                <li>
+                    <!--Cho nay hien thi menu cha-->
+                    <a href="@item.Link"><span class="fa arrow"></span>@item.Text</a>
+                    @if (child.Count() > 0)
+                    {
+                        <ul class="nav nav-second-level">
+                            @foreach (var childItem in child)
+                            {
+                                <!--Danh muc menu Con-->
+                                <li>
+                                    <a href="@item.Link-@childItem.ID">@childItem.Text</a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+
