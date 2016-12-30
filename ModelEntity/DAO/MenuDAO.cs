@@ -43,7 +43,7 @@ namespace ModelEntity.DAO
                 dt[dt.Count - 1].DisplayOrder = int.Parse(sdr["DisplayOrder"].ToString());
                 dt[dt.Count - 1].Target = sdr["Target"].ToString();
                 dt[dt.Count - 1].Status = bool.Parse(sdr["Status"].ToString());
-                dt[dt.Count - 1].ParentMenuID = int.Parse(sdr["ParentMenuID"].ToString());
+                dt[dt.Count - 1].ParentMenuID = long.Parse(sdr["ParentMenuID"].ToString());
                 dt[dt.Count - 1].TypeID = long.Parse(sdr["TypeID"].ToString());
                 dt[dt.Count - 1].ModuleID = sdr["ModuleID"].ToString();
 

@@ -18,10 +18,10 @@ namespace ModelEntity.DAO
         }
         //-----------------------------
         //Dùng LINQ to Entity
-        //public List<User> ListAll()
-        //{
-        //    return db.Users.ToList();
-        //}
+        /*public List<User> ListAll()
+        {
+            return db.Users.ToList();
+        }*/
         //----------------------------------
         //Lay danh sách User bằng Store Procedure
         public List<User> ListAll(string searchString, ref int totalRecord, int currPage, int recodperpage)

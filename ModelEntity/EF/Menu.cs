@@ -19,12 +19,14 @@ namespace ModelEntity.EF
 
         public int? DisplayOrder { get; set; }
 
+        public int? DisplayPage { get; set; }
+
         [StringLength(50)]
         public string Target { get; set; }
 
         public bool? Status { get; set; }
 
-        public int? ParentMenuID { get; set; }
+        public long? ParentMenuID { get; set; }
 
         public long? TypeID { get; set; }
 

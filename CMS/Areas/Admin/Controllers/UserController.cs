@@ -27,7 +27,6 @@ namespace CMS.Areas.Admin.Controllers
 
             //Lấy tổng số bản ghi, và truyền tham số phân trang
             var model = new UserDAO().ListAll(searchString, ref totalRecord, currPage, recordPage);
-
             int maxPage = 5;
             int toTalPage = 0; //Khởi tạo tổng số trang
 

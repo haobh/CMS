@@ -40,15 +40,14 @@
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
-               <!--Top Menu-->
+               <!--Top Menu-->           
                 @RenderPage("_topmenu.cshtml")
-
             </ul>
             <!-- /.navbar-top-links -->
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <!--Left Menu-->
-                    @RenderPage("_leftmenu.cshtml")
+                    @{Html.RenderAction("GetMenu", "Home"); }<!--Getmenu: Action; Home: Controller, khi Load thì chỗ này sẽ gọi HomeController trước rồi mới đến các trang kế thừa-->
                 </div>
                 <!-- /.sidebar-collapse -->
               
@@ -86,6 +85,8 @@
     <script src="~/Assets/Admin/data/morris-data.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="~/Assets/Admin/dist/js/sb-admin-2.js"></script>
+
+    @RenderSection("jsFootter",required:false);
 </body>
 </html>
 

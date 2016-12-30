@@ -8,19 +8,18 @@ using System.Data.SqlClient;
 
 namespace ModelEntity.DAO
 {
-    public class ModuleDAO
+    public class SharedDAO
     {
-
         /// <summary>
         /// Khoi tao Contructor
         /// </summary>
         DBContextCMS db = null;
-        public ModuleDAO()
+        public SharedDAO()
         {
             db = new DBContextCMS();
         }
         //Dùng LINQ to Entity
-        public IEnumerable<Module> ListAll()
+        public List<Module> ListAll()
         {
             return db.Modules.ToList();
         }
